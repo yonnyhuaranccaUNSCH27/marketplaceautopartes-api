@@ -19,5 +19,11 @@ public class CitasAsesoriaDTO {
     @Column(nullable = false)
     private Date fcita;
 
+    @Column(nullable = false)
+    private Date horarioInicio;
+
+    @Column(nullable = false)
+    private Date horarioFinal;
+
 
 }
