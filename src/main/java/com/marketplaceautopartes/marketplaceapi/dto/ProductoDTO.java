@@ -1,5 +1,9 @@
 package com.marketplaceautopartes.marketplaceapi.dto;
 
+import com.marketplaceautopartes.marketplaceapi.model.*;
+import jakarta.persistence.ForeignKey;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -44,18 +48,24 @@ public class ProductoDTO {
     private String modelo;
 
     @NotNull(message = "Es obligatorio")
-    private Integer idTiposervicio;
+    private TiposervicioDTO tiposervicio;
 
-    @NotNull(message = "Es obligatorio")
-    private Integer idCategoria;
+    private CategoriaDTO categoria;
 
-    @NotNull(message = "Es obligatorio")
-    private Integer idMarca;
-    private Integer idUnidad;
-    private Integer idTipoafectacion;
-    private Integer idLugar;
-    private Integer idOrigen;
-    @NotNull(message = "Es obligatorio")
-    private Integer idTienda;
-    private Integer idUbigeo;
+    private MarcaDTO marca;
+
+    private UnidadDTO unidad;
+
+    private TipoafectacionDTO tipoafectacion;
+
+
+    private LugarDTO lugar;
+
+
+    private OrigenDTO origen;
+
+
+    private TiendaDTO tienda;
+
+    private UbigeoDTO ubigeo;
 }
