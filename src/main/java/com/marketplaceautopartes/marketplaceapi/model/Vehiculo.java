@@ -60,9 +60,9 @@ public class Vehiculo {
     @JoinColumn(name = "id_modelo",foreignKey = @ForeignKey(name = "FK_VEHICULO_MODELO"))
     private Modelo modelo;
 
-    @OneToMany(mappedBy = "id_listatipocombustible", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "vehiculo")
     private List<Listatipocombustible> listatipocombustible;
 
-    @OneToMany(mappedBy = "id_listacolor", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "vehiculo")
     private List<Listacolor> listacolor;
 }
