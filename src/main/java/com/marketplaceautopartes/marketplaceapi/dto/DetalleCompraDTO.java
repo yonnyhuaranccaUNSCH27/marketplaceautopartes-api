@@ -1,5 +1,6 @@
 package com.marketplaceautopartes.marketplaceapi.dto;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -15,7 +16,7 @@ public class DetalleCompraDTO {
     private String item;
     private Double subtotal;
 
-    @NotNull(message = "Es obligatorio")
+    @JsonBackReference
     private CompraDTO compra;
 
     @NotNull(message = "Es obligatorio")

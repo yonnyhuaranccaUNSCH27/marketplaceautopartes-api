@@ -7,6 +7,7 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 @Entity
@@ -38,4 +39,10 @@ public class Compra {
     @ManyToOne
     @JoinColumn(name = "idUsuario", nullable = false, foreignKey = @ForeignKey(name = "FK_compra_usuario"))
     private Usuario usuario;
+
+  @OneToMany(mappedBy = "compra", cascade = CascadeType.ALL, orphanRemoval = true)
+  private List<DetalleCompra> detalleCompra;
+
+
+
 }
