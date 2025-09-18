@@ -1,0 +1,23 @@
+package com.marketplaceautopartes.marketplaceapi.dto;
+
+import jakarta.persistence.Column;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.util.Date;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class CitasAsesoriaDTO {
+    private Integer idCitasasesoria;
+
+    @Column(nullable = false,length = 40)
+    private String descripcion;
+
+    @Column(nullable = false)
+    private Date fcita;
+
+
+}

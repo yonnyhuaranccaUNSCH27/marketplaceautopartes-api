@@ -13,22 +13,29 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-@Table(name = "tbl_citasasesoria")
-public class CitasAsesoria {
+@Table(name ="tbl_subdominio" )
+public class Subdominio {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @EqualsAndHashCode.Include
-    private Integer idCitasasesoria;
+    private Integer idSubdominio;
 
     @Column(nullable = false)
-    private String descripcion;
+    private String estadoverificacion;
 
     @Column(nullable = false)
-    private Date fcita;
+    private String valorParametro;
 
     @Column(nullable = false)
-    private Date horarioInicio;
+    private Date fregistro;
 
     @Column(nullable = false)
-    private Date horarioFinal;
+    private Date fverifiacion;
+
+//    @ManyToOne
+//    @JoinColumn(name = idTienda, nullable = false,foreignKey = @ForeignKey("fk_subdominio_tienda"))
+//    private Tienda tienda;
+
+
+
 }
