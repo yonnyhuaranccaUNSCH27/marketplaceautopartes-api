@@ -1,11 +1,16 @@
 package com.marketplaceautopartes.marketplaceapi.dto;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.marketplaceautopartes.marketplaceapi.model.DetalleCompra;
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -47,4 +52,7 @@ public class VentaDTO {
 
     @NotNull(message = "Es obligatorio")
     private Integer idTipoventa;
+
+    @JsonManagedReference
+    private List<ListaventaDTO> listaventa;
 }

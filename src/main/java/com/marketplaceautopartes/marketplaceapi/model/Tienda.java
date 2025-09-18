@@ -6,6 +6,8 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
+
 @Data
 @Entity
 @AllArgsConstructor
@@ -17,4 +19,71 @@ public class Tienda {
     @Id
     @EqualsAndHashCode.Include
     private Integer idTienda;
+
+    @Column(nullable = false)
+    private String codigo;
+
+    //TODO: tipo documento
+
+    @Column(nullable = false)
+    private String numeroDocumento;
+
+    @Column(nullable = false)
+    private String razonSocial;
+
+    @Column(nullable = false)
+    private String nombreComercial;
+
+    @OneToOne
+    @JoinColumn(name = "id_ubigeo", nullable = false)
+    private Ubigeo ubigeo;
+
+    @Column(nullable = false)
+    private String nombreDireccion;
+
+    @Column(nullable = false)
+    private String telefono1;
+
+    private String telefono2;
+
+    @Column(nullable = false)
+    private String correo1;
+
+    private String correo2;
+
+    private LocalDate fechaCreacion;
+
+    private LocalDate fechaModificacion;
+
+    private String urlLogo;
+
+    private String urlPortada;
+
+    private String usuarioSol;
+
+    private String claveSol;
+
+    private String fileCertificado;
+
+    //TODO: preguntar por id plan suscripcion
+    @Column(nullable = false)
+    private String descripcion;
+
+    @Column(nullable = false)
+    private String mision;
+
+    @Column(nullable = false)
+    private String vision;
+
+    private Boolean estado;
+
+    private LocalDate fechaSuscripcion;
+
+    //TODO: preguntar por numero de cuenta e id banco
+
+    @PrePersist
+    public void prePersist() {
+        this.fechaCreacion = LocalDate.now();
+        this.estado = true;
+    }
 }
