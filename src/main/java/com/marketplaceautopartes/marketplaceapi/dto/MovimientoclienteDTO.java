@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.swing.text.html.parser.Entity;
 import java.time.LocalDateTime;
 
 @Data
@@ -17,8 +18,7 @@ public class MovimientoclienteDTO {
     private Double totalcompra;
     private String preferenciapaga;
 
-    private Integer idEntidadespersonas;
+    private EntidadespersonasDTO entidadespersonas;
 
-    @NotNull(message = "Es obligatorio")
-    private Integer idVenta;
+    private VentaDTO venta;
 }

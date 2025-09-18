@@ -18,8 +18,8 @@ public class ArchivoDTO {
     private String descripcion;
 
     @NotNull(message = "Es obligatorio")
-    private Integer idTipoarchivo;
+    private TipoarchivoDTO tipoarchivo;
 
     @NotNull(message = "Es obligatorio")
-    private Integer idProducto;
+    private ProductoDTO producto;
 }

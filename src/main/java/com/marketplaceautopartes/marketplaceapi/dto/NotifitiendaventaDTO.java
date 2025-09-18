@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Data
 @AllArgsConstructor
@@ -23,7 +24,7 @@ public class NotifitiendaventaDTO {
     private String mensaje;
 
     @NotNull
-    private LocalDate fechaenvio;
+    private LocalDateTime fechaenvio;
 
     private Integer estado;
 

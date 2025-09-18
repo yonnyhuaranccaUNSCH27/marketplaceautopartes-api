@@ -18,8 +18,8 @@ public class ProveedorDTO {
     private int tipoProveedor;
 
     @NotNull(message = "Es obligatorio")
-    private Integer idBanco;
+    private BancoDTO banco;
 
     @NotNull(message = "Es obligatorio")
-    private Integer idPersona;
+    private PersonaDTO persona;
 }

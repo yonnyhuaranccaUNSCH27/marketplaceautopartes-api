@@ -7,6 +7,7 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Data
 @Entity
@@ -29,7 +30,7 @@ public class Notifitiendaventa {
     private String mensaje;
 
     @Column(nullable = false)
-    private LocalDate fechaenvio;
+    private LocalDateTime fechaenvio;
 
     private Integer estado;
 

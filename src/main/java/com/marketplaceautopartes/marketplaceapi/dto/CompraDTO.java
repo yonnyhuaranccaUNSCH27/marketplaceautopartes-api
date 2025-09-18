@@ -25,8 +25,8 @@ public class CompraDTO {
     private String destino;
 
     @NotNull(message = "Es obligatorio")
-    private Integer idProveedor;
+    private ProveedorDTO proveedor;
 
     @NotNull(message = "Es obligatorio")
-    private Integer idUsuario;
+    private UsuarioDTO usuario;
 }

@@ -16,8 +16,8 @@ public class DetalleCompraDTO {
     private Double subtotal;
 
     @NotNull(message = "Es obligatorio")
-    private Integer idCompra;
+    private CompraDTO compra;
 
     @NotNull(message = "Es obligatorio")
-    private Integer idProducto;
+    private ProductoDTO producto;
 }
