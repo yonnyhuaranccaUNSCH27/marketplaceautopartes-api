@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.cglib.core.Local;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Data
 @Entity
@@ -58,4 +59,10 @@ public class Vehiculo {
     @ManyToOne
     @JoinColumn(name = "id_modelo",foreignKey = @ForeignKey(name = "FK_VEHICULO_MODELO"))
     private Modelo modelo;
+
+    @OneToMany(mappedBy = "vehiculo")
+    private List<Listatipocombustible> listatipocombustible;
+
+    @OneToMany(mappedBy = "vehiculo")
+    private List<Listacolor> listacolor;
 }
