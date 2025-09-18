@@ -11,21 +11,22 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-@Table(name = "tbl_marca")
-public class Marca {
+@Table(name = "tbl_detalleCompra")
+public class DetalleCompra {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @EqualsAndHashCode.Include
-<<<<<<< HEAD
-    private Integer IdMarca;
+    private Integer idDetalleCompra;
 
-    @Column(nullable = false)
-    private String descipcion;
-    
-=======
-    private Integer idMarca;
+    private Integer cantidad;
+    private String item;
+    private Double subtotal;
 
-    @Column(nullable = false)
-    private String descripcion;
->>>>>>> c07a4443bff525c421e11b1ae8580df9168204b5
+    @ManyToOne
+    @JoinColumn(name = "idCompra", nullable = false)
+    private Compra compra;
+
+    @ManyToOne
+    @JoinColumn(name = "idProducto", nullable = false)
+    private Producto producto;
 }

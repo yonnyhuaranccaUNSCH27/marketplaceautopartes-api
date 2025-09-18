@@ -6,26 +6,25 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
+
 @Data
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-@Table(name = "tbl_marca")
-public class Marca {
+@Table(name = "tbl_listacolor")
+public class Listacolor {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @EqualsAndHashCode.Include
-<<<<<<< HEAD
-    private Integer IdMarca;
+    private Integer idListacolor;
 
-    @Column(nullable = false)
-    private String descipcion;
-    
-=======
-    private Integer idMarca;
+    @ManyToOne
+    @JoinColumn(name = "id_vehiculo",foreignKey = @ForeignKey(name = "FK_LISTACOLOR_VEHICULO"))
+    private Vehiculo vehiculo;
 
-    @Column(nullable = false)
-    private String descripcion;
->>>>>>> c07a4443bff525c421e11b1ae8580df9168204b5
+    @ManyToOne
+    @JoinColumn(name = "id_color",foreignKey = @ForeignKey(name = "FK_LISTACOLOR_COLOR"))
+    private Color color;
 }
