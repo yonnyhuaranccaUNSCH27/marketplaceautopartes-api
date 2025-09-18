@@ -54,5 +54,5 @@ public class VentaDTO {
     private Integer idTipoventa;
 
     @JsonManagedReference
-    private List<DetalleCompraDTO> detalleCompra;
+    private List<ListaventaDTO> listaventa;
 }
