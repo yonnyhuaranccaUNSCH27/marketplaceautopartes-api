@@ -60,7 +60,7 @@ public class Venta {
     @JoinColumn(name = "idTipoventa", nullable = false, foreignKey = @ForeignKey(name = "FK_venta_tipoventa"))
     private Tipoventa tipoventa;
 
-    @OneToMany(mappedBy = "venta", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "venta")
     private List<Listaventa> listaventas;
 
 }

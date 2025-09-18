@@ -40,7 +40,7 @@ public class Compra {
     @JoinColumn(name = "idUsuario", nullable = false, foreignKey = @ForeignKey(name = "FK_compra_usuario"))
     private Usuario usuario;
 
-  @OneToMany(mappedBy = "compra", cascade = CascadeType.ALL, orphanRemoval = true)
+  @OneToMany(mappedBy = "compra")
   private List<DetalleCompra> detalleCompra;
 
 
