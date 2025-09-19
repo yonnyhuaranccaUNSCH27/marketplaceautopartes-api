@@ -19,10 +19,10 @@ public class Detalleplansuscripcion {
     private Integer idDetalleplansuscripcion;
 
     @ManyToOne
-    @JoinColumn(name="id_plan", foreignKey = @ForeignKey(name="FK_DETALLEPLANSUSCRIPCION_PLAN"))
+    @JoinColumn(name="idPlan", foreignKey = @ForeignKey(name="FK_DETALLEPLANSUSCRIPCION_PLAN"))
     private Plan plan;
 
     @ManyToOne
-    @JoinColumn(name = "id_plansuscripcion", foreignKey = @ForeignKey(name="FK_DETALLEPLANSUSCRIPCION_PLANSUSCRIPCION"))
+    @JoinColumn(name = "idPlansuscripcion", foreignKey = @ForeignKey(name="FK_DETALLEPLANSUSCRIPCION_PLANSUSCRIPCION"))
     private Plan plansuscripcion;
 }

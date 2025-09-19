@@ -27,7 +27,7 @@ public class Plansuscripcion {
     private String serie;
 
     @Column(nullable = false)
-    private String opeGravadas;
+    private String opGravadas;
 
     @Column(nullable = false)
     private String igv;
@@ -51,12 +51,12 @@ public class Plansuscripcion {
     private String codigoCorreo;
 
     @ManyToOne
-    @JoinColumn(name = "id_tienda", foreignKey = @ForeignKey(name = "FK_PLANSUSCRIPCION_TIENDA"))
+    @JoinColumn(name = "idTienda", foreignKey = @ForeignKey(name = "FK_PLANSUSCRIPCION_TIENDA"))
     private Tienda tienda;
 
-//    @ManyToOne
-//    @JoinColumn(name = "id_codigomoneda",foreignKey = @ForeignKey(name = "FK_PLANSUSCRIPCION_CODIGOMONEDA"))
-//    private Codigomoneda codigomoneda;
+    @ManyToOne
+    @JoinColumn(name = "idCodigomoneda",foreignKey = @ForeignKey(name = "FK_PLANSUSCRIPCION_CODIGOMONEDA"))
+    private Codigomoneda codigomoneda;
 
 
 }

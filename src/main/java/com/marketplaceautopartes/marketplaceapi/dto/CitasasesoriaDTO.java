@@ -10,7 +10,7 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class CitasAsesoriaDTO {
+public class CitasasesoriaDTO {
     private Integer idCitasasesoria;
 
     @Column(nullable = false,length = 40)

@@ -14,7 +14,7 @@ import java.util.Date;
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Table(name = "tbl_citasasesoria")
-public class CitasAsesoria {
+public class Citasasesoria {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @EqualsAndHashCode.Include

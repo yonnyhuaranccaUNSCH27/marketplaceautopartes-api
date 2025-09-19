@@ -24,7 +24,7 @@ public class Parametrostienda {
     private String claveparametro;
 
     @Column(nullable = false)
-    private Integer stockMinimo;
+    private Integer stockminimo;
 
     @Column(nullable = false)
     private String valorparametro;

@@ -24,7 +24,7 @@ public class Subdominio {
     private String estadoverificacion;
 
     @Column(nullable = false)
-    private String valorParametro;
+    private String valorparametro;
 
     @Column(nullable = false)
     private Date fregistro;
@@ -32,9 +32,9 @@ public class Subdominio {
     @Column(nullable = false)
     private Date fverifiacion;
 
-//    @ManyToOne
-//    @JoinColumn(name = idTienda, nullable = false,foreignKey = @ForeignKey("fk_subdominio_tienda"))
-//    private Tienda tienda;
+    @ManyToOne
+    @JoinColumn(name = "idTienda", nullable = false,foreignKey = @ForeignKey(name="fk_subdominio_tienda"))
+    private Tienda tienda;
 
 
 

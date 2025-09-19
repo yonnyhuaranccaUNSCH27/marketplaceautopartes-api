@@ -13,18 +13,18 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Table(name = "tbl_personacitasasesoria")
-public class Personascitasasesoria {
+public class Personacitasasesoria {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @EqualsAndHashCode.Include
-    private Integer idPersonascitasasesoria;
+    private Integer idPersonacitasasesoria;
+
+    @ManyToOne
+    @JoinColumn(name="idCitasasesoria", nullable = false, foreignKey = @ForeignKey(name = "FK_PERSONASCITASASESORIA_CITASASESORIA"))
+    private Citasasesoria citasAsesoria;
 
 //    @ManyToOne
-//    @JoinColumn(name=idCitasasesoria, nullable = false, foreignKey = @ForeignKey(name = "FK_PERSONASCITASASESORIA_CITASASESORIA"))
-//    private CitasAsesoria citasAsesoria;
-
-//    @ManyToOne
-//    @JoinColumn(name=idComponentepersona, nullable = false,foreignKey = @ForeignKey(name = "fk_personascitasasesoria_componentepersona"))
+//    @JoinColumn(name="idComponentepersona", nullable = false,foreignKey = @ForeignKey(name = "fk_personascitasasesoria_componentepersona"))
 //    private ComponentePersona componentePersona;
 
 }

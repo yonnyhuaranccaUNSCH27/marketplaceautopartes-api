@@ -49,7 +49,7 @@ public class Plan {
     private String moneda;
 
     @Column(nullable = false)
-    private String maxAlacenamiento;
+    private String maxAlmacenamiento;
 
     @Column(nullable = false)
     private String maxProductos;

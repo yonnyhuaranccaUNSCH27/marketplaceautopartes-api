@@ -16,7 +16,7 @@ public class Listabeneficios {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @EqualsAndHashCode.Include
-    private Integer idListabeneficio;
+    private Integer idListabeneficios;
 
     @Column(nullable = false)
     private String descripcion;
