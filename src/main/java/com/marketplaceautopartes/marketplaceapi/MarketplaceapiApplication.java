@@ -7,7 +7,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class MarketplaceapiApplication {
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(MarketplaceapiApplication.class, args);
+		System.out.println("IADATAPERU");
 	}
 	 
 }
