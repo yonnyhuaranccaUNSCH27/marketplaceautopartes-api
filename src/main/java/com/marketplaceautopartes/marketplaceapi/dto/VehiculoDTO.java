@@ -46,8 +46,8 @@ public class VehiculoDTO {
     private ModeloDTO modelo;
 
     @JsonManagedReference
-    private List<Listatipocombustible> listatipocombustible;
+    private List<ListatipocombustibleDTO> listatipocombustible;
 
     @JsonManagedReference
-    private List<Listacolor> listacolor;
+    private List<ListacolorDTO> listacolor;
 }
