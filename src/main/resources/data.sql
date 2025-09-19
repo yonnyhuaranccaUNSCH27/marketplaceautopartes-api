@@ -2425,3 +2425,16 @@ VALUES (1, 1);
 INSERT INTO tbl_menurol (id_menu, id_rol)
 VALUES (1, 1),
        (2, 1);
+
+INSERT INTO tbl_marca (descripcion)
+VALUES ('TOYOTA'),
+       ('NISSAN'),
+       ('HYUNDAI');
+
+INSERT INTO tbl_tipocombustible (descripcion)
+VALUES ('NORMAL'),
+       ('PREMIUM');
+
+INSERT INTO tbl_color (descripcion)
+VALUES ('ROJO'),
+       ('AZUL');

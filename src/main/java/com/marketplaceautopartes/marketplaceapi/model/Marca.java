@@ -19,6 +19,6 @@ public class Marca {
     private Integer IdMarca;
 
     @Column(nullable = false)
-    private String descipcion;
+    private String descripcion;
 
 }

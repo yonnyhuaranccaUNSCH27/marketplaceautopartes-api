@@ -35,7 +35,19 @@ public class VehiculoController {
 
     @PostMapping
     public ResponseEntity<Void> save(@Valid @RequestBody VehiculoDTO dto) {
-        Vehiculo obj = vehiculoService.save(mapperUtil.map(dto, Vehiculo.class));
+        // Mapea el DTO a la entidad Vehiculo
+        Vehiculo vehiculos = mapperUtil.map(dto, Vehiculo.class);
+
+        // Registra las relaciones con las listas de tipos de combustibles y los colores
+        if (vehiculos.getListatipocombustible() != null) {
+            vehiculos.getListatipocombustible().forEach(ld -> ld.setVehiculo(vehiculos));
+        }
+
+        if (vehiculos.getListacolor() != null) {
+            vehiculos.getListacolor().forEach(lh -> lh.setVehiculo(vehiculos));
+        }
+
+        Vehiculo obj = vehiculoService.save(vehiculos);
         URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getIdVehiculo()).toUri();
         return ResponseEntity.created(location).build();
     }
@@ -43,7 +55,19 @@ public class VehiculoController {
     @PutMapping("/{id}")
     public ResponseEntity<VehiculoDTO> update(@Valid @PathVariable("id") Integer id, @RequestBody VehiculoDTO dto) {
         dto.setIdVehiculo(id);
-        Vehiculo obj = vehiculoService.update(id, mapperUtil.map(dto, Vehiculo.class));
+        // Mapea el DTO a la entidad Vehiculo
+        Vehiculo vehiculo = mapperUtil.map(dto, Vehiculo.class);
+
+        // Registra las relaciones con las listas de tipos de combustibles y los colores
+        if (vehiculo.getListatipocombustible() != null) {
+            vehiculo.getListatipocombustible().forEach(ld -> ld.setVehiculo(vehiculo));
+        }
+
+        if (vehiculo.getListacolor() != null) {
+            vehiculo.getListacolor().forEach(lh -> lh.setVehiculo(vehiculo));
+        }
+
+        Vehiculo obj = vehiculoService.update(id,vehiculo);
         return ResponseEntity.ok(mapperUtil.map(obj, VehiculoDTO.class));
     }
 
