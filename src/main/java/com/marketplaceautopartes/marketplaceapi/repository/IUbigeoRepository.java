@@ -17,5 +17,4 @@ public interface IUbigeoRepository extends IGenericRepo<Ubigeo,Integer> {
 
     @Query(value = "SELECT * FROM tbl_ubigeo u WHERE u.ubidpto=:departaments  AND u.ubiprovincia=:provincias AND u.ubidistrito!='00';",nativeQuery = true)
     List<Ubigeo> findAllDistritosByProvinciaByDistrito(@Param("departaments") String departaments,@Param("provincias") String provincias);
-
 }
