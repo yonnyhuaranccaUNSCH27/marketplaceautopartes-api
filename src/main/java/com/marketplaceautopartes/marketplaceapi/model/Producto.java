@@ -81,4 +81,7 @@ public class Producto {
   @ManyToOne
   @JoinColumn(name = "idUbigeo", nullable = false, foreignKey = @ForeignKey(name = "FK_Producto_Ubigeo"))
   private Ubigeo ubigeo;
+
+  @OneToMany(mappedBy = "producto")
+  private java.util.List<Productocolor> productocolor;
 }
