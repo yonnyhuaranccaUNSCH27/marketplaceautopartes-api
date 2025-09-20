@@ -23,7 +23,9 @@ public class Tienda {
     @Column(nullable = false)
     private String codigo;
 
-    //TODO: tipo documento
+    @OneToOne
+    @JoinColumn(name = "id_tipodocumento", nullable = false)
+    private Tipodocumento tipodocumento;
 
     @Column(nullable = false)
     private String numeroDocumento;
@@ -79,7 +81,12 @@ public class Tienda {
 
     private LocalDate fechaSuscripcion;
 
-    //TODO: preguntar por numero de cuenta e id banco
+    @Column(nullable = false)
+    private String numeroCuenta;
+
+    @OneToOne
+    @JoinColumn(name = "id_banco", nullable = false)
+    private Banco banco;
 
     @PrePersist
     public void prePersist() {
