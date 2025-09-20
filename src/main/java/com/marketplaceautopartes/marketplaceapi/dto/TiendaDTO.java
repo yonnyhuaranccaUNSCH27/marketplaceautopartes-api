@@ -1,5 +1,6 @@
 package com.marketplaceautopartes.marketplaceapi.dto;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.marketplaceautopartes.marketplaceapi.model.Ubigeo;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
@@ -10,6 +11,7 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -69,6 +71,7 @@ public class TiendaDTO {
     private Boolean estado;
 
     private LocalDate fechaSuscripcion;
-
+    @JsonManagedReference
+    private List<CuentabancariaDTO> cuentabancarias;
     //TODO: preguntar por numero de cuenta e id banco
 }

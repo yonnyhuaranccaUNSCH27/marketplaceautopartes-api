@@ -18,15 +18,12 @@ public class Proveedor {
     @EqualsAndHashCode.Include
     private Integer idProveedor;
 
-    private String cuentaCci;
-    private String cuentaNormal;
-
     @Column(nullable = false)
     private int tipoProveedor;
 
     @ManyToOne
-    @JoinColumn(name = "idBanco", nullable = false, foreignKey = @ForeignKey(name = "FK_Proveedor_Banco"))
-    private Banco banco;
+    @JoinColumn(name = "idCuentabancaria", nullable = false, foreignKey = @ForeignKey(name = "FK_Proveedor_CuentaBancaria"))
+    private Cuentabancaria cuentabancaria;
 
     @OneToOne
     @JoinColumn(name = "idPersona", nullable = false, foreignKey = @ForeignKey(name = "FK_Proveedor_Persona"))
