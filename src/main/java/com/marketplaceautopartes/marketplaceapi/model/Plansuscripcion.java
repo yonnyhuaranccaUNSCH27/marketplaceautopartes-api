@@ -58,5 +58,12 @@ public class Plansuscripcion {
     @JoinColumn(name = "idCodigomoneda",foreignKey = @ForeignKey(name = "FK_PLANSUSCRIPCION_CODIGOMONEDA"))
     private Codigomoneda codigomoneda;
 
+    @ManyToOne
+    @JoinColumn(name = "idUsuario", foreignKey =@ForeignKey(name = "fk_plansuscripcion_usuario"))
+    private Usuario usuario;
+
+    @ManyToOne
+    @JoinColumn(name = "idTipocomprobante",foreignKey = @ForeignKey(name = "fk_palnsuscripcion_tipocomprobante"))
+    private Tipocomprobante tipocomprobante;
 
 }

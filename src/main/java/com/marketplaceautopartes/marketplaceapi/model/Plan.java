@@ -49,13 +49,13 @@ public class Plan {
     private String moneda;
 
     @Column(nullable = false)
-    private String maxAlmacenamiento;
+    private String maxalmacenamiento;
 
     @Column(nullable = false)
-    private String maxProductos;
+    private String maxproductos;
 
     @Column(nullable = false)
-    private String maxPedidosmes;
+    private String maxpedidosmes;
 
     @Column(nullable = false)
     private Date fcreacion;

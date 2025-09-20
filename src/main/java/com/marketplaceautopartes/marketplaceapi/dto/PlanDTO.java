@@ -35,11 +35,11 @@ public class PlanDTO {
 
     private String estado;
 
-    private String maxAlmacenamento;
+    private String maxalmacenamiento;
 
-    private String maxProductos;
+    private String maxproductos;
 
-    private String maxPedidosmes;
+    private String maxpedidosmes;
 
     private Date fcreacion;
     private Date factualizacion;
