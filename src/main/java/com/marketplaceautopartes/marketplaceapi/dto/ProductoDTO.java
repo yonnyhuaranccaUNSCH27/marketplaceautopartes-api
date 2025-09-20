@@ -1,5 +1,6 @@
 package com.marketplaceautopartes.marketplaceapi.dto;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.marketplaceautopartes.marketplaceapi.model.*;
 import jakarta.persistence.ForeignKey;
 import jakarta.persistence.JoinColumn;
@@ -11,6 +12,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -58,14 +60,12 @@ public class ProductoDTO {
 
     private TipoafectacionDTO tipoafectacion;
 
-
     private LugarDTO lugar;
-
-
-    private OrigenDTO origen;
-
 
     private TiendaDTO tienda;
 
     private UbigeoDTO ubigeo;
+
+    @JsonManagedReference
+    private List<ListaorigenproductoDTO> listaorigenproducto;
 }

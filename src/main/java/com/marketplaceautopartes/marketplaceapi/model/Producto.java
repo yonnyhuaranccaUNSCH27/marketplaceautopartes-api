@@ -75,10 +75,6 @@ public class Producto {
   private Lugar lugar;
 
   @ManyToOne
-  @JoinColumn(name = "idOrigen", nullable = false, foreignKey = @ForeignKey(name = "FK_Producto_Origen"))
-  private Origen origen;
-
-  @ManyToOne
   @JoinColumn(name = "idTienda", nullable = false, foreignKey = @ForeignKey(name = "FK_Producto_Tienda"))
   private Tienda tienda;
 
