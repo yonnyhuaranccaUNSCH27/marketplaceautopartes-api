@@ -84,10 +84,6 @@ public class Tienda {
     @Column(nullable = false)
     private String numeroCuenta;
 
-    @OneToOne
-    @JoinColumn(name = "id_banco", nullable = false)
-    private Banco banco;
-
     @PrePersist
     public void prePersist() {
         this.fechaCreacion = LocalDate.now();

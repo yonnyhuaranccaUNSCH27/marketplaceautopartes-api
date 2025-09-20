@@ -11,14 +11,12 @@ import lombok.NoArgsConstructor;
 public class ProveedorDTO {
     private Integer idProveedor;
 
-    private String cuentaCci;
-    private String cuentaNormal;
 
     @NotNull(message = "Es obligatorio")
     private int tipoProveedor;
 
-    @NotNull(message = "Es obligatorio")
-    private BancoDTO banco;
+
+    private CuentabancariaDTO cuentabancaria;
 
     @NotNull(message = "Es obligatorio")
     private PersonaDTO persona;
