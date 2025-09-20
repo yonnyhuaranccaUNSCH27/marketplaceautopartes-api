@@ -75,14 +75,13 @@ public class Producto {
   private Lugar lugar;
 
   @ManyToOne
-  @JoinColumn(name = "idOrigen", nullable = false, foreignKey = @ForeignKey(name = "FK_Producto_Origen"))
-  private Origen origen;
-
-  @ManyToOne
   @JoinColumn(name = "idTienda", nullable = false, foreignKey = @ForeignKey(name = "FK_Producto_Tienda"))
   private Tienda tienda;
 
   @ManyToOne
   @JoinColumn(name = "idUbigeo", nullable = false, foreignKey = @ForeignKey(name = "FK_Producto_Ubigeo"))
   private Ubigeo ubigeo;
+
+  @OneToMany(mappedBy = "producto")
+  private java.util.List<Productocolor> productocolor;
 }
