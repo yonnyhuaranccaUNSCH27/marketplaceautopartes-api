@@ -1,5 +1,6 @@
 package com.marketplaceautopartes.marketplaceapi.dto;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.marketplaceautopartes.marketplaceapi.model.*;
 import jakarta.persistence.ForeignKey;
 import jakarta.persistence.JoinColumn;
@@ -68,4 +69,6 @@ public class ProductoDTO {
     private TiendaDTO tienda;
 
     private UbigeoDTO ubigeo;
+    @JsonManagedReference
+    private List<ProductocolorDTO> productocolors;
 }
