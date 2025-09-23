@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 @Entity
@@ -21,7 +22,7 @@ public class Producto {
 
   private String codigo;
   private String codigointernacional;
-  private String codigobarras;
+  private String codigobarra;
 
   @Column(nullable = false)
   private String nombre;
@@ -42,10 +43,10 @@ public class Producto {
   private Double precioventa3;
   private LocalDateTime fechasalida;
   private LocalDateTime fechacreada;
-  private int estado;
+  private Integer estado;
   private String observacion;
-  private int totalvisitas;
-  private int totalcompartidos;
+  private Integer totalvisitas;
+  private Integer totalcompartidos;
   //Agregados
   private String modelo;
 
@@ -83,5 +84,11 @@ public class Producto {
   private Ubigeo ubigeo;
 
   @OneToMany(mappedBy = "producto")
-  private java.util.List<Productocolor> productocolor;
+  private List<Productocolor> productocolor;
+
+  @OneToMany(mappedBy = "producto", cascade = CascadeType.ALL, orphanRemoval = true)
+  private List<Listaorigenproducto> listaorigenproducto;
+
+  @OneToMany(mappedBy = "producto", cascade = CascadeType.ALL, orphanRemoval = true)
+  private List<Listavehiculo> listavehiculo;
 }

@@ -1,7 +1,6 @@
 package com.marketplaceautopartes.marketplaceapi.dto;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,12 +8,11 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ProductocolorDTO {
-    private Integer idProductocolor;
+public class ListavehiculoDTO {
+    private Integer idListavehiculo;
+
+    private VehiculoDTO vehiculo;
 
     @JsonBackReference
     private ProductoDTO producto;
-
-    private ColorDTO color;
 }
-

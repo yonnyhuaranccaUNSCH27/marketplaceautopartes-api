@@ -28,5 +28,5 @@ public class NotifitiendaventaDTO {
 
     private Integer estado;
 
-//    private VentaestadohistorialDTO ventaestadohistorial;
+    private VentaestadohistorialDTO ventaestadohistorial;
 }

@@ -16,5 +16,5 @@ public class TiposervicioDTO {
     private String descripcion;
 
     @NotNull(message = "Es obligatorio")
-    private int estado;
+    private Integer estado;
 }
