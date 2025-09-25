@@ -30,12 +30,11 @@ public class Sesionusuario {
     private Date fexpiracion;
 
     @Column(nullable = false)
-    private Integer isactive;
+    private String isactive;
 
     @ManyToOne
     @JoinColumn(name = "id_usuario", foreignKey = @ForeignKey(name = "FK_SESIONUSUARIO_USUARIO"))
     private Usuario usuario;
-
 
 
 }
