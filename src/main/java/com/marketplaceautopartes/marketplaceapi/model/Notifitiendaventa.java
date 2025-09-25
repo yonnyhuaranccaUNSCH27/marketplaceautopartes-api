@@ -34,8 +34,8 @@ public class Notifitiendaventa {
 
     private Integer estado;
 
-//    @ManyToOne
-//    @JoinColumn(name = "id_ventaestadohistorial",foreignKey = @ForeignKey(name = "FK_NOTIFICACIONVENTA_VENTAESTADOHISTORIAL"))
-//    private Ventaestadohistorial ventaestadohistorial;
+    @ManyToOne
+    @JoinColumn(name = "id_ventaestadohistorial",foreignKey = @ForeignKey(name = "FK_NOTIFICACIONVENTA_VENTAESTADOHISTORIAL"))
+    private Ventaestadohistorial ventaestadohistorial;
 
 }

@@ -11,15 +11,18 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-@Table(name = "tbl_tiposervicio")
-public class Tiposervicio {
+@Table(name = "tbl_listavehiculo")
+public class Listavehiculo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @EqualsAndHashCode.Include
-    private Integer idTiposervicio;
+    private Integer idListavehiculo;
 
-    @Column(nullable = false)
-    private String descripcion;
+    @ManyToOne
+    @JoinColumn(name = "id_vehiculo",foreignKey = @ForeignKey(name = "FK_LISTAVEHICULO_VEHICULO"))
+    private Vehiculo vehiculo;
 
-    private Integer estado;
+    @ManyToOne
+    @JoinColumn(name = "id_producto",foreignKey = @ForeignKey(name = "FK_LISTAVEHICULO_PRODUCTO"))
+    private Producto producto;
 }

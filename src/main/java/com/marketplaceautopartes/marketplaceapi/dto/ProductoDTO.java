@@ -22,7 +22,7 @@ public class ProductoDTO {
 
     private String codigo;
     private String codigointernacional;
-    private String codigobarras;
+    private String codigobarra;
 
     @NotBlank(message = "Es obligatorio")
     private String nombre;
@@ -43,10 +43,10 @@ public class ProductoDTO {
     private Double precioventa3;
     private LocalDateTime fechasalida;
     private LocalDateTime fechacreada;
-    private int estado;
+    private Integer estado;
     private String observacion;
-    private int totalvisitas;
-    private int totalcompartidos;
+    private Integer totalvisitas;
+    private Integer totalcompartidos;
     private String modelo;
 
     @NotNull(message = "Es obligatorio")
@@ -68,4 +68,10 @@ public class ProductoDTO {
 
     @JsonManagedReference
     private List<ListaorigenproductoDTO> listaorigenproducto;
+
+    @JsonManagedReference
+    private List<ProductocolorDTO> productocolor;
+
+    @JsonManagedReference
+    private List<ListavehiculoDTO> listavehiculo;
 }

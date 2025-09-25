@@ -23,4 +23,7 @@ public class Tipoafectacion {
   
   @Column(nullable = false)
   private String descripcion;
+
+  @Column(nullable = false)
+  private String nombreafectacion;
 }
