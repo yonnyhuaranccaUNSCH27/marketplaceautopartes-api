@@ -11,20 +11,21 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-@Table(name = "tbl_mensajeadjunto")
-public class Mensajeadjunto {
+@Table(name = "tbl_participantemensajeria")
+public class Participantemensajeria {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @EqualsAndHashCode.Include
-    private Integer idMensajeadjunto;
-
-    @Column(nullable = false)
-    private String nombre;
-
-    @Column(nullable = false)
-    private String contenido;
+    private Integer idParticipantemensajeria;
 
     @ManyToOne
-    @JoinColumn(name = "id_mensaje",foreignKey = @ForeignKey(name = "FK_MENSAJEADJUNTO_MENSAJE"))
+    @JoinColumn(name = "id_mensaje",foreignKey = @ForeignKey(name = "FK_PARTICIPANTEMENSAJERIA_MENSAJE"))
     private Mensaje mensaje;
+
+    @ManyToOne
+    @JoinColumn(name = "id_participante",foreignKey = @ForeignKey(name = "FK_PARTICIPANTEMENSAJERIA_PARTICIPANTE"))
+    private Participante participante;
+
+    private Integer tipoparticipante;
+
 }

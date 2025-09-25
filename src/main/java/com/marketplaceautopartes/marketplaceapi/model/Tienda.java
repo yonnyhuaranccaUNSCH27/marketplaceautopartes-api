@@ -81,8 +81,6 @@ public class Tienda {
 
     private LocalDate fechaSuscripcion;
 
-    @Column(nullable = false)
-    private String numeroCuenta;
 
     @PrePersist
     public void prePersist() {

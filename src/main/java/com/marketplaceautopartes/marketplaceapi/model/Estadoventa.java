@@ -18,7 +18,7 @@ public class Estadoventa {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @EqualsAndHashCode.Include
-    private Integer idEstadoVenta;
+    private Integer idEstadoventa;
 
     @Column(nullable = false)
     private String descripcion;
