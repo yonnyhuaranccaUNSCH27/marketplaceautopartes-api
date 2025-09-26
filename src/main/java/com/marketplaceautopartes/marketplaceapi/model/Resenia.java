@@ -18,10 +18,10 @@ public class Resenia {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @EqualsAndHashCode.Include
-    private Integer idParticipante;
+    private Integer idResenia;
 
     @Column(nullable = false)
-    private LocalDate fechaResena;
+    private LocalDate fechaResenia;
 
     @Column(nullable = false)
     private String contenido;
@@ -42,6 +42,6 @@ public class Resenia {
 
     @PrePersist
     public void prePersist() {
-        fechaResena = LocalDate.now();
+        fechaResenia = LocalDate.now();
     }
 }

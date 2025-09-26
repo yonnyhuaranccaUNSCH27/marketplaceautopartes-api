@@ -36,7 +36,7 @@ public class EstadoventaController {
     @PostMapping
     public ResponseEntity<Void> save(@Valid @RequestBody EstadoventaDTO dto) {
         Estadoventa obj = estadoventaService.save(mapperUtil.map(dto, Estadoventa.class));
-        URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getIdEstadoVenta()).toUri();
+        URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getIdEstadoventa()).toUri();
         return ResponseEntity.created(location).build();
     }
 
