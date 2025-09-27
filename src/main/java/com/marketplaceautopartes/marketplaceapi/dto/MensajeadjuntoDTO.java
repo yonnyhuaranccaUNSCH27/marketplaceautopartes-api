@@ -18,4 +18,6 @@ public class MensajeadjuntoDTO {
     @NotBlank
     private String contenido;
 
+    private MensajeDTO mensaje;
+
 }

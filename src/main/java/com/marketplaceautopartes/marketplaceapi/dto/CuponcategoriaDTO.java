@@ -14,8 +14,8 @@ public class CuponcategoriaDTO {
     private Integer idCuponcategoria;
 
     @NotNull
-    private Cupon cupon;
+    private CuponDTO cupon;
 
     @NotNull
-    private Categoria categoria;
+    private CategoriaDTO categoria;
 }
