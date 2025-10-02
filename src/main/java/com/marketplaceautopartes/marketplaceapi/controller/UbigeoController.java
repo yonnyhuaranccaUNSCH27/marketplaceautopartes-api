@@ -24,6 +24,14 @@ public class UbigeoController {
     private final IUbigeoService ubigeoService;
     private final MapperUtil mapperUtil;
 
+    // ✅ AGREGAR ESTE MÉTODO
+    @Operation(summary = "Lista todos los ubigeos")
+    @GetMapping
+    public ResponseEntity<List<UbigeoDTO>> findAll() {
+        List<UbigeoDTO> list = mapperUtil.mapList(ubigeoService.findAll(), UbigeoDTO.class);
+        return ResponseEntity.ok(list);
+    }
+
     @Operation(summary = "Lista un ubigeo")
     @GetMapping("/{id}")
     public ResponseEntity<UbigeoDTO> findById(@PathVariable Integer id){
@@ -53,5 +61,4 @@ public class UbigeoController {
         List<UbigeoDTO> ubigeos = mapperUtil.mapList(ubigeoService.getDistritos(departamento, provincia),UbigeoDTO.class);
         return ResponseEntity.ok(ubigeos);
     }
-
 }

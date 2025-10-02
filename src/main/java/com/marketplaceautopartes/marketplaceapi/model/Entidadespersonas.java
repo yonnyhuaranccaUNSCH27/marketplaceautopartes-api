@@ -41,27 +41,27 @@ public class Entidadespersonas {
     private String disponibilidad;
     private Double tarifahora;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_tienda",foreignKey = @ForeignKey(name = "FK_ENTIDADESPERSONAS_TIENDA"), nullable = true)
     private Tienda tienda;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_cargo",foreignKey = @ForeignKey(name = "FK_ENTIDADESPERSONAS_CARGO"))
     private Cargo cargo;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     @JoinColumn(name = "id_persona",foreignKey = @ForeignKey(name = "FK_ENTIDADESPERSONAS_PERSONA"))
     private Persona persona;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_tipoentidadespersonas", foreignKey = @ForeignKey(name = "FK_ENTIDADESPERSONAS_TIPOENTIDADESPERSONAS"))
     private Tipoentidadespersonas tipoentidadespersonas;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_oficina", foreignKey = @ForeignKey(name = "FK_ENTIDADESPERSONAS_OFICINA"))
     private Oficina oficina;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_niveleducacion", foreignKey = @ForeignKey(name = "FK_ENTIDADESPERSONAS_NIVELEDUCACION"))
     private Niveleducacion niveleducacion;
 

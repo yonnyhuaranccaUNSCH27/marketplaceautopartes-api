@@ -41,8 +41,7 @@ public class UsuarioDTO {
     private Integer termino2;
 
     @NotNull
-    private Entidadespersonas entidadespersonas;
-
+    private EntidadespersonasDTO entidadespersonas;
 
     private List<UsuariorolDTO> usuariorol;
 

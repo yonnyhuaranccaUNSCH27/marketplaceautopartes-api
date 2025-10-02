@@ -42,7 +42,7 @@ public class Usuario {
 
     private Integer termino2;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_entidadespersonas",foreignKey = @ForeignKey(name = "FK_USUARIO_ENTIDADESPERSONAS"))
     private Entidadespersonas entidadespersonas;
 
