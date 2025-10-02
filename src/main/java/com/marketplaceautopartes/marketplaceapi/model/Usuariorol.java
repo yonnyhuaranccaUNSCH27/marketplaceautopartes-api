@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-@Table(name = "tbl_usuarioro")
+@Table(name = "tbl_usuariorol")
 public class Usuariorol {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id

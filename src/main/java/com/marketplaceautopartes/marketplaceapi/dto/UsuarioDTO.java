@@ -44,6 +44,7 @@ public class UsuarioDTO {
     private Entidadespersonas entidadespersonas;
 
 
-    private List<UsuariorolDTO> usuariorol;
+    private List<RolDTO> roles;
+
 
 }
