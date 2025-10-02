@@ -58,6 +58,8 @@ public class TiendaDTO {
 
     private String fileCertificado;
 
+    private String nombredominio;
+
     //TODO: preguntar por id plan suscripcion
     @NotBlank
     private String descripcion;

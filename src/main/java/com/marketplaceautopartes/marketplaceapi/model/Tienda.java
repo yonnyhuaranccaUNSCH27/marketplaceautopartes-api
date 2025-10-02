@@ -67,6 +67,8 @@ public class Tienda {
 
     private String fileCertificado;
 
+    private String nombredominio;
+
     //TODO: preguntar por id plan suscripcion
     @Column(nullable = false)
     private String descripcion;
