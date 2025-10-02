@@ -1,7 +1,10 @@
 package com.marketplaceautopartes.marketplaceapi.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.marketplaceautopartes.marketplaceapi.model.Entidadespersonas;
 import com.marketplaceautopartes.marketplaceapi.model.Rol;
+import com.marketplaceautopartes.marketplaceapi.model.Usuario;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -41,8 +44,9 @@ public class UsuarioDTO {
     private Integer termino2;
 
     @NotNull
-    private EntidadespersonasDTO entidadespersonas;
+    private Entidadespersonas entidadespersonas;
 
+    @JsonIgnoreProperties("usuario")
     private List<UsuariorolDTO> usuariorol;
 
 }

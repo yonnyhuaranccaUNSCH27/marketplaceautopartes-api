@@ -59,4 +59,7 @@ public class Usuario {
     public String getPassword() {
         return password;
     }
+
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
+    private List<Usuariorol> usuariorol;
 }
