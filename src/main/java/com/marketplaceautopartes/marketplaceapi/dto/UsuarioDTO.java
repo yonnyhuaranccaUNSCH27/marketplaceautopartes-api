@@ -43,8 +43,6 @@ public class UsuarioDTO {
     @NotNull
     private Entidadespersonas entidadespersonas;
 
-
     private List<RolDTO> roles;
-
 
 }
