@@ -10,7 +10,7 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ParametrostiendaDTO {
+public class  ParametrostiendaDTO {
     private Integer idParametrostienda;
 
     @NotNull

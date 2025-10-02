@@ -10,5 +10,5 @@ import lombok.NoArgsConstructor;
 public class PersonacitasasesoriaDTO {
     private Integer idPersonacitasasesoria;
 
-    private CitasasesoriaDTO citasAsesoria;
+    private CitasasesoriaDTO citasasesoria;
 }
