@@ -44,9 +44,9 @@ public class UsuarioDTO {
     private Integer termino2;
 
     @NotNull
-    private Entidadespersonas entidadespersonas;
+    private EntidadespersonasDTO entidadespersonas;
 
-    @JsonIgnoreProperties("usuario")
-    private List<UsuariorolDTO> usuariorol;
+//    @JsonIgnoreProperties("usuario")
+    private List<RolDTO> roles;
 
 }
