@@ -1,6 +1,7 @@
 package com.marketplaceautopartes.marketplaceapi.controller;
 
 import com.marketplaceautopartes.marketplaceapi.dto.MenuDTO;
+import com.marketplaceautopartes.marketplaceapi.dto.UbigeoDTO;
 import com.marketplaceautopartes.marketplaceapi.model.Menu;
 import com.marketplaceautopartes.marketplaceapi.service.IMenuService;
 import com.marketplaceautopartes.marketplaceapi.util.MapperUtil;
@@ -59,6 +60,15 @@ public class MenuController {
     public ResponseEntity<Void> delete(@PathVariable Integer id) {
         menuService.delete(id);
         return ResponseEntity.noContent().build();
+    }
+
+    @Operation(summary = "Lista menu segun rol y usuario")
+    @GetMapping("/allusuariorol")
+    public ResponseEntity<List<MenuDTO>> getMenuByidRolidUsuario(
+            @RequestParam Integer id_rol,
+            @RequestParam Integer id_usuario)  {
+        List<MenuDTO> list = mapperUtil.mapList(menuService.getMenuByRolUsername(id_rol, id_usuario),MenuDTO.class);
+        return ResponseEntity.ok(list);
     }
 
 }
