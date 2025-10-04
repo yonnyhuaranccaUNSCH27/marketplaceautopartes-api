@@ -1,5 +1,6 @@
 package com.marketplaceautopartes.marketplaceapi.dto;
 
+import com.marketplaceautopartes.marketplaceapi.model.Menugrupo;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -22,4 +23,6 @@ public class MenuDTO {
 
     @NotBlank(message = "Es obligatorio")
     private String urlmenu;
+
+    private Menugrupo menugrupo;
 }

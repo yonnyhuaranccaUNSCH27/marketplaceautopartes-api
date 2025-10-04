@@ -17,63 +17,67 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class TiendaDTO {
-    private Integer idTienda;
+  private Integer idTienda;
 
-    private String codigo;
+  private String codigo;
 
-    //TODO: tipo documento
-    @NotBlank
-    private String numeroDocumento;
+  private TipodocumentoDTO tipodocumento;
 
-    @NotBlank
-    private String razonSocial;
-    @NotBlank
-    private String nombreComercial;
-    @NotNull
-    private Ubigeo ubigeo;
+  @NotBlank
+  private String numeroDocumento;
 
-    private String nombreDireccion;
+  @NotBlank
+  private String razonSocial;
+  @NotBlank
+  private String nombreComercial;
+  @NotNull
+  private Ubigeo ubigeo;
 
-    @NotBlank
-    private String telefono1;
+  private String nombreDireccion;
 
-    private String telefono2;
+  @NotBlank
+  private String telefono1;
 
-    @NotBlank
-    private String correo1;
+  private String telefono2;
 
-    private String correo2;
+  @NotBlank
+  private String correo1;
 
-    private LocalDate fechaCreacion;
+  private String correo2;
 
-    private LocalDate fechaModificacion;
+  private LocalDate fechaCreacion;
 
-    private String urlLogo;
+  private LocalDate fechaModificacion;
 
-    private String urlPortada;
+  private String urlLogo;
 
-    private String usuarioSol;
+  private String urlPortada;
 
-    private String claveSol;
+  private String usuarioSol;
 
-    private String fileCertificado;
+  private String claveSol;
 
-    private String nombredominio;
+  //Todo: preguntar si debe ir los 3 o solo el fileCertificado
+  private byte[] fileCertificado;  // Almacena el contenido binario del .pfx
+  private String nombreCertificado;  // Nombre del archivo (ej: "certificado")
+  private String tipoCertificado;
 
-    //TODO: preguntar por id plan suscripcion
-    @NotBlank
-    private String descripcion;
+  private String nombredominio;
 
-    @NotBlank
-    private String mision;
+  //TODO: preguntar por id plan suscripcion
+  @NotBlank
+  private String descripcion;
 
-    @NotBlank
-    private String vision;
+  @NotBlank
+  private String mision;
 
-    private Boolean estado;
+  @NotBlank
+  private String vision;
 
-    private LocalDate fechaSuscripcion;
-    @JsonManagedReference
-    private List<CuentabancariaDTO> cuentabancarias;
-    //TODO: preguntar por numero de cuenta e id banco
+  private Boolean estado;
+
+  private LocalDate fechaSuscripcion;
+  @JsonManagedReference
+  private List<CuentabancariaDTO> cuentabancarias;
+  //TODO: preguntar por numero de cuenta e id banco
 }

@@ -61,4 +61,63 @@ public class TiendaController {
         return ResponseEntity.noContent().build();
     }
 
+//  /**
+//   * Crea una nueva tienda con certificado
+//   */
+//  @PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+//  public ResponseEntity<TiendaDTO> crearTienda(
+//      @RequestPart("tienda") @Valid TiendaDTO tiendaDTO,
+//      @RequestPart(value = "fileCertificado", required = false) MultipartFile certificado) {
+//
+//    try {
+//      TiendaDTO nuevaTienda = tiendaService.crearTienda(tiendaDTO, certificado);
+//      return new ResponseEntity<>(nuevaTienda, HttpStatus.CREATED);
+//    } catch (Exception e) {
+//      return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+//    }
+//  }
+//
+//  /**
+//   * Actualiza una tienda existente
+//   */
+//  @PutMapping(value = "/{id}", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+//  public ResponseEntity<TiendaDTO> actualizarTienda(
+//      @PathVariable Integer id,
+//      @RequestPart("tienda") @Valid TiendaDTO tiendaDTO,
+//      @RequestPart(value = "fileCertificado", required = false) MultipartFile certificado) {
+//
+//    try {
+//      TiendaDTO tiendaActualizada = tiendaService.actualizarTienda(id, tiendaDTO, certificado);
+//      return new ResponseEntity<>(tiendaActualizada, HttpStatus.OK);
+//    } catch (Exception e) {
+//      return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+//    }
+//  }
+//
+//  /**
+//   * Descarga el certificado de una tienda
+//   */
+//  @GetMapping("/{id}/certificado")
+//  public ResponseEntity<Resource> descargarCertificado(@PathVariable Integer id) {
+//
+//    try {
+//      TiendaDTO tienda = tiendaService.obtenerPorId(id);
+//
+//      if (tienda.getFileCertificado() == null) {
+//        return ResponseEntity.notFound().build();
+//      }
+//
+//      ByteArrayResource resource = new ByteArrayResource(tienda.getFileCertificado());
+//
+//      return ResponseEntity.ok()
+//          .contentType(MediaType.parseMediaType(tienda.getTipoCertificado()))
+//          .header(HttpHeaders.CONTENT_DISPOSITION,
+//              "attachment; filename=\"" + tienda.getNombreCertificado() + "\"")
+//          .body(resource);
+//
+//    } catch (Exception e) {
+//      return ResponseEntity.notFound().build();
+//    }
+//  }
+
 }
