@@ -25,7 +25,7 @@ public class UsuarioDTO {
     @NotBlank(message = "Es obligatorio")
     private String usernombres;
 
-    @NotBlank(message = "Es obligatorio")
+    //@NotBlank(message = "Es obligatorio")
     private String username;
 
     @NotBlank(message = "Es obligatorio")

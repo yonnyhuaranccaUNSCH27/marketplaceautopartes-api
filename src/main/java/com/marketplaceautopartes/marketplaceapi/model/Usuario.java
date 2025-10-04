@@ -24,7 +24,7 @@ public class Usuario {
     @Column(nullable = false)
     private String usernombres;
 
-    @Column(nullable = false)
+    //@Column(nullable = false)
     private String username;
 
     @Column(nullable = false)
@@ -55,11 +55,16 @@ public class Usuario {
 
     private List<Rol> roles;
 
-    // Getter personalizado para Spring Security
-    public String getPassword() {
-        return password;
-    }
+//    // Getter personalizado para Spring Security
+//    public String getPassword() {
+//        return password;
+//    }
+//
+//    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
+//    private List<Usuariorol> usuariorol;
 
-    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
-    private List<Usuariorol> usuariorol;
+//    // Getter personalizado para Spring Security
+//    public String getPassword() {
+//        return password;
+//    }
 }
