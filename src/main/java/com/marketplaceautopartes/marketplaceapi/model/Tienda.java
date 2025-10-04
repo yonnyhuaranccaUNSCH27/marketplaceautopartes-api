@@ -7,6 +7,7 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Data
 @Entity
@@ -23,7 +24,7 @@ public class Tienda {
     @Column(nullable = false)
     private String codigo;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "id_tipodocumento", nullable = false)
     private Tipodocumento tipodocumento;
 
@@ -65,7 +66,14 @@ public class Tienda {
 
     private String claveSol;
 
-    private String fileCertificado;
+    //Todo: preguntar si debe ir los 3 o solo el fileCertificado
+  @Lob
+  @Column(name = "file_certificado", columnDefinition = "VARBINARY(MAX)")
+  private byte[] fileCertificado;
+  @Column(name = "nombre_certificado", length = 255)
+  private String nombreCertificado;
+  @Column(name = "tipo_certificado", length = 100)
+  private String tipoCertificado;
 
     private String nombredominio;
 
@@ -83,6 +91,8 @@ public class Tienda {
 
     private LocalDate fechaSuscripcion;
 
+    @OneToMany(mappedBy = "tienda", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Cuentabancaria> cuentasBancarias;
 
     @PrePersist
     public void prePersist() {
